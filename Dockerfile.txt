@@ -1,6 +1,6 @@
 FROM continuumio/anaconda3:4.4.0
-COPY . /usr/app/
+COPY . /docto/docker
 EXPOSE 5000
-WORKDIR /usr/app/
-RUN pip freeze > requirements.txt
+WORKDIR /docto/docker
+RUN python3 -m pip install -r requirements.txt
 CMD python trial.py
